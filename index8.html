@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>台いすき誌 - 京都中的微型美好</title>
+    <!-- 載入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* 使用 Noto Sans TC 確保中文顯示優雅 */
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: #f7f7f7; /* 淺灰色背景，增加質感 */
+        }
+        .magazine-title {
+            font-size: 7rem;
+            letter-spacing: 0.15em;
+            font-weight: 700;
+        }
+        @media (min-width: 768px) {
+            .magazine-title {
+                font-size: 5rem;
+            }
+        }
+        .toc-item-bg {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            background-color: #ffffff;
+        }
+        .toc-item-bg:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <!-- 頂部導航/標誌區塊 -->
+    <header class="container mx-auto px-0 py-6 md:py-8">
+<!-- 台いすき LOGO + 導覽列（含紅色底線） -->
+<div class="w-full flex flex-col items-center justify-center mb-6 border-b-2 border-[#E60012] pb-4">
+
+  <!-- Logo -->
+  <a href="#" class="inline-block">
+    <img
+      src="logos.png"
+      alt="台いすき Logo"
+      class="h-80 md:h-120 mb-2"
+      onerror="this.onerror=null;this.src='https://placehold.co/180x50/944A3B/333333?text=Logo';"
+    >
+  </a>
+
+  </nav>
+</div>
+                <!-- 訂閱 (替換為信封圖標) -->
+                <a href="#" class="flex items-center space-x-1 hover:text-black transition duration-150 text-gray-600 group" title="訂閱電子報">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                    <span class="hidden lg:inline group-hover:underline">訂閱</span>
+                </a>
+                
+                <!-- 關於我們 (替換為資訊圖標) -->
+                <a href="#" class="flex items-center space-x-1 hover:text-black transition duration-150 text-gray-600 group" title="關於慢時光誌">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="12"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                    <span class="hidden lg:inline group-hover:underline">關於</span>
+                </a>
+                
+            </nav>
+            
+            <!-- 手機版菜單圖標 (不變，保持漢堡圖標) -->
+            <button class="md:hidden p-2 rounded-full hover:bg-gray-100 transition" title="菜單">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="16"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- 雜誌封面主視覺區塊 -->
+    <main class="container mx-auto px-4 mt-4 mb-16">
+        <section class="bg-white rounded-2xl shadow-xl overflow-hidden md:flex md:h-[60vh]">
+            <!-- 封面圖片/視覺元素 -->
+            <div class="md:w-1/2 p-6 md:p-12 flex flex-col justify-center bg-gray-900 text-white">
+                <p class="text-xl font-light tracking-wider mb-2 text-yellow-300">ISSUE. 001</p>
+                <h1 class="magazine-title leading-tight">
+                    <span class="block">京都中的</span>
+                    <span class="block">微型美好</span>
+                </h1>
+                <p class="mt-6 text-gray-300 max-w-md">
+                    在鴨川旁，發現那些京都人的生活的細節、尋找靜謐的咖啡館與隱藏在巷弄裡的人情味。
+                </p>
+                <div class="mt-8">
+                    <a href="#toc" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-gray-900 bg-white hover:bg-gray-100 transition duration-150 shadow-md">
+                        瀏覽本期目錄
+                    </a>
+                </div>
+            </div>
+
+            <!-- 模擬封面圖片 (使用 Placeholder) -->
+            <div class="md:w-1/2 min-h-60 bg-cover bg-center" style="background-image: url('kyoto2.jpg">
+            </div>
+        </section>
+
+        <!-- 編輯總覽/本期概念區塊 -->
+        <section class="mt-12 md:mt-16 py-8 md:py-12 border-t border-b border-gray-300">
+            <h2 class="text-2xl font-bold mb-4 text-center text-gray-900">編者之語 — 探索日常的詩意</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed text-center">
+                在這個加速的世界裡，我們在京都慢下來。《台いすき誌》第 104 期，一起放慢腳步，用旅人的眼光重新審視生活中的城市紋理。從京都咖啡香到每個微小的片刻，都是值得美好的記錄。
+            </p>
+        </section>
+
+        <!-- 本期目錄 (Table of Contents) 區塊 -->
+        <section id="toc" class="mt-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-900 border-l-4 border-yellow-500 pl-4">本期專題目錄</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- 專題文章 1: 隱藏巷弄 -->
+                <article class="toc-item-bg rounded-xl p-6 shadow-lg border border-gray-100">
+                    <span class="text-sm font-semibold text-yellow-500 mb-2 block">CULTURE & LIFESTYLE</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">被遺忘的城市角落：巷弄建築的呼吸</h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        深入台日的隱藏巷弄，探討這些城市「背後」的空間如何承載歷史與生活氣息。
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium text-sm">深入閱讀 &rarr;</a>
+                    <div class="mt-4 h-32 rounded-lg bg-gray-200 bg-cover bg-center" style="background-image: url('L1030087.JPG');"></div>
+                </article>
+
+                <!-- 專題文章 2: 獨立咖啡 -->
+                <article class="toc-item-bg rounded-xl p-6 shadow-lg border border-gray-100">
+                    <span class="text-sm font-semibold text-yellow-500 mb-2 block">FOOD & DRINK</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">一杯入魂：城市獨立咖啡地圖</h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        特選十家隱身於住宅區的微型烘焙坊，他們如何用一杯咖啡定義社區精神。
+                    </p>
+                    <a href="coffee_landing_page.html" class="text-blue-600 hover:text-blue-800 font-medium text-sm">深入閱讀 &rarr;</a>
+                    <div class="mt-4 h-32 rounded-lg bg-gray-200 bg-cover bg-center" style="background-image: url('L1030716.JPG');"></div>
+                </article>
+
+                <!-- 專題文章 3: 城市聲音 -->
+                <article class="toc-item-bg rounded-xl p-6 shadow-lg border border-gray-100">
+                    <span class="text-sm font-semibold text-yellow-500 mb-2 block">ART & SOUND</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">城市的寂靜樂章：從噪音到聲音景觀</h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        專訪台日藝術家，教你如何聆聽京都、分辨腳步聲、遠處火車聲帶來的心理寧靜。
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium text-sm">深入閱讀 &rarr;</a>
+                    <div class="mt-4 h-32 rounded-lg bg-gray-200 bg-cover bg-center" style="background-image: url('L1030719.JPG');"></div>
+                </article>
+
+                <!-- 專題文章 4: 職人生活 -->
+                <article class="toc-item-bg rounded-xl p-6 shadow-lg border border-gray-100">
+                    <span class="text-sm font-semibold text-yellow-500 mb-2 block">CRAFTSMANSHIP</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">職人生活：所看，所見，所作</h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        從台日生活職人出發，他們如何在生活中，持續創作的美學與靈感。
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium text-sm">深入閱讀 &rarr;</a>
+                    <div class="mt-4 h-32 rounded-lg bg-gray-200 bg-cover bg-center" style="background-image: url('https://placehold.co/400x300/EF4444/FFFFFF?text=Artisans');"></div>
+                </article>
+
+                <!-- 專題文章 5: 步行路線 -->
+                <article class="toc-item-bg rounded-xl p-6 shadow-lg border border-gray-100">
+                    <span class="text-sm font-semibold text-yellow-500 mb-2 block">TRAVEL & EXPLORE</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">兩小時步行路線：城市慢行指南</h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        設計三條週末專屬的城市步行路線，讓你以雙腳丈量城市，發現新風景。
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium text-sm">深入閱讀 &rarr;</a>
+                    <div class="mt-4 h-32 rounded-lg bg-gray-200 bg-cover bg-center" style="background-image: url('https://placehold.co/400x300/34D399/FFFFFF?text=Walking+Route');"></div>
+                </article>
+                
+                <!-- 專題文章 6: 電影/書/音樂 -->
+                <article class="toc-item-bg rounded-xl p-6 shadow-lg border border-gray-100">
+                    <span class="text-sm font-semibold text-yellow-500 mb-2 block">GASTRONOMY</span>
+                    <h3 class="text-xl font-bold mb-3 text-gray-900">到京都小住：京都的慢生活</h3>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        透過慢，連結人們對生活的與療癒。探訪數十年不變的愛與喜歡。
+                    </p>
+                    <a href="#" class="text-blue-600 hover:text-blue-800 font-medium text-sm">深入閱讀 &rarr;</a>
+                    <div class="mt-4 h-32 rounded-lg bg-gray-200 bg-cover bg-center" style="background-image: url('https://placehold.co/400x300/6366F1/FFFFFF?text=Food+Memory');"></div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- 訂閱/購買 CTA 區塊 -->
+        <section class="mt-20 p-10 md:p-16 bg-gray-900 text-white rounded-2xl text-center shadow-2xl">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4 tracking-tight">不錯過任何一次深度探險</h2>
+            <p class="text-xl text-gray-300 mb-8">
+                立即訂閱，享受全數位內容與獨家專訪影音。
+            </p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4">
+                <a href="#" class="bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-400 transition duration-150">
+                    購買本期 (NT$120)
+                </a>
+                <a href="#" class="border border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-gray-900 transition duration-150">
+                    年度數位訂閱
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 頁腳 -->
+    <footer class="bg-gray-800 text-gray-400 py-8 mt-12">
+        <div class="container mx-auto px-4 text-center text-sm">
+            <p class="mb-2">&copy; 2025 SLOW TIME MAGAZINE. All rights reserved.</p>
+            <div class="space-x-4">
+                <a href="#" class="hover:text-white">服務條款</a>
+                <a href="#" class="hover:text-white">隱私權政策</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
