@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,8 @@
     <!-- 載入 Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+TC:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- 引入 Font Awesome 讓社交媒體圖標可以使用 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* 使用 Noto Sans TC 確保中文顯示優雅 */
         body {
@@ -199,13 +201,43 @@
 
     </main>
 
-    <!-- 頁腳 -->
-    <footer class="bg-gray-800 text-gray-400 py-8 mt-12">
-        <div class="container mx-auto px-4 text-center text-sm">
-            <p class="mb-2">&copy; 2025 SLOW TIME MAGAZINE. All rights reserved.</p>
-            <div class="space-x-4">
-                <a href="#" class="hover:text-white">服務條款</a>
-                <a href="#" class="hover:text-white">隱私權政策</a>
+    <!-- 頁腳 (FOOTER) - 根據您提供的圖片設計實現 -->
+    <footer class="bg-[#1A202C] text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            
+            <!-- 社交媒體圖標 -->
+            <div class="flex justify-center space-x-6 mb-8 text-2xl">
+                <!-- Facebook -->
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300 transform hover:scale-110" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <!-- Instagram -->
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300 transform hover:scale-110" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <!-- Chat/Message (使用 Font Awesome 的對話氣泡圖標) -->
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300 transform hover:scale-110" aria-label="Chat">
+                    <i class="far fa-comment-dots"></i>
+                </a>
+                <!-- YouTube -->
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300 transform hover:scale-110" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+
+            <!-- 版權聲明 -->
+            <p class="text-sm text-gray-400 mb-6">
+                © 2025 SLOW TIME MAGAZINE. All rights reserved.
+            </p>
+
+            <!-- 服務連結 -->
+            <div class="flex justify-center space-x-8 text-sm font-light">
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300 hover:underline rounded-md px-2 py-1">
+                    服務條款
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white transition duration-300 hover:underline rounded-md px-2 py-1">
+                    隱私權政策
+                </a>
             </div>
         </div>
     </footer>
